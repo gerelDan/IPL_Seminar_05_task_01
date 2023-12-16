@@ -26,5 +26,17 @@ void PrintArray(int[,] arr)
         Console.WriteLine();
     }
 }
+void GetElement(int[,] arr, int row, int col)
+{
+    if (row < 0 | col < 0 | row >= arr.GetLength(0) | col >= arr.GetLength(1))
+    {
+        Console.WriteLine("Такого элемента нет");
+    }
+    else
+    {
+        Console.WriteLine($"В строке {row} в столбце {col} находится {arr[row, col]}");
+    }
+}
 int [,] arr = FillArray(5, 5, 0, 10);
 PrintArray(arr);
+GetElement(arr, 5, 4);
